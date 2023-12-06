@@ -29,11 +29,29 @@ var filteredItems = items.filter((item) => item.price <= borderPrice);
 console.log(filteredItems);
 
 
-function calcTotalPrice(price:number,amount:number):number {
+// function calcTotalPrice(price:number,amount:number):number {
+//     var totalPrice = price * amount;
+//     return totalPrice; 
+// }
+
+// const calcTotalPrice = function(price:number,amount:number):number {
+//     var totalPrice = price * amount;
+//     return totalPrice
+// }
+
+const calcTotalPrice = (price:number,amount:number):number => {
     var totalPrice = price * amount;
-    return totalPrice;
-    
+    return totalPrice
+}
+
+function findItem(id:number) {
+    return items.find((item) => item.id == id);
 }
 
 var amount = 5;
-calcTotalPrice(item1.price,amount);
+var totalPrice = calcTotalPrice(item1.price,amount);
+console.log(totalPrice);
+
+var itemId = 1;
+var selectedItem = findItem(itemId);
+console.log(selectedItem);
